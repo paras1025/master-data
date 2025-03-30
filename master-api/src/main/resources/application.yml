@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: ${DB_HOST}
+    password: ${DB_PASSWORD}
+    username: ${DB_USERNAME}
+  profiles:
+    active: local
+  jackson:
+    time-zone: Asia/Kolkata
+  flyway:
+    enabled: true
+    locations: /db/migration
+
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: validate
+          show_sql: false
+          jdbc:
+            time_zone: Asia/Kolkata
+
+server:
+  servlet:
+    context-path: /lml-master-ws
+
+
+external:
+  cors:
+    url:
+      allow: ${EXTERNAL_URL:http://localhost:3000}

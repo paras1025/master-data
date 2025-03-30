@@ -1,0 +1,12 @@
+logging:
+  level:
+    org.springframework.web: DEBUG
+
+#postgresql configurations
+DB_HOST: jdbc:postgresql://localhost:5431/inspare_workshop_service
+DB_PASSWORD: inspare_workshop_service
+DB_USERNAME: inspare_workshop_service
+
+#Server configurations
+server:
+  port: 8088
